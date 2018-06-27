@@ -1,12 +1,21 @@
+{% load staticfiles %}
 <html>
 <head>
     <title>Search</title>
+    <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	
 </head>
 <body>
+	<br />
     <form action="/feed/search/" method="get">
-    	<h1>Enter rss feed link:</h1>
-        <input type="text" name="q">
-        <input type="submit" value="Search">
+    	<div class="form-group">
+        <input type="text" class="form-control" name="q" placeholder="Enter feed link">
+    	</div>
+    	<div class="form-group">
+        <input type="submit" class="btn btn-info" value="Search">
+    	</div>
     </form>
 </body>
 </html>

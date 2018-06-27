@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Links</title>
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	
+</head>
+<body>
+<h2>LINKS...............</h2>
+{% if link_list %}
+        <ul class="list-group">
+        {% for link in link_list %}
+                <li class="list-group-item list-group-item-success">{{ link.url }}</li>
+        {% endfor %}
+        </ul>
+{% else %}
+        <p>No links are present.</p>
+{% endif %}
+</body>
+</html>
+
